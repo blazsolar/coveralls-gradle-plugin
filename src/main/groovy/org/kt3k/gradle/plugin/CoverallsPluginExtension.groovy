@@ -9,7 +9,7 @@ class CoverallsPluginExtension {
 	Boolean saveAsFile = false
 	
 	/** the JSON file path */
-	String saveFilePath = 'build/coveralls/report.json'
+	String saveFilePath = 'build/coveralls'
 	
 	/** API endpoint of Coveralls */
 	String apiEndpoint = 'https://coveralls.io/api/v1/jobs'

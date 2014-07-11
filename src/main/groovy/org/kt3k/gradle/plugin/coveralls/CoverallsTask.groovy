@@ -1,17 +1,10 @@
 package org.kt3k.gradle.plugin.coveralls
-
-import groovyx.net.http.HTTPBuilder
-import org.apache.http.entity.ContentType
-import org.apache.http.entity.mime.MultipartEntityBuilder
+import com.squareup.okhttp.*
 import org.gradle.api.DefaultTask
-import org.gradle.api.Project
-import org.gradle.api.tasks.TaskAction
-import org.kt3k.gradle.plugin.coveralls.domain.*
 import org.gradle.api.logging.Logger
 import org.gradle.api.logging.Logging
-
-import static groovyx.net.http.Method.POST
-
+import org.gradle.api.tasks.TaskAction
+import org.kt3k.gradle.plugin.coveralls.domain.*
 /**
  * `coveralls` task class
  */
@@ -26,7 +19,6 @@ class CoverallsTask extends DefaultTask {
 	/** source report factory mapping */
 	Map<String, SourceReportFactory> sourceReportFactoryMap = [:]
 
-
 	/**
 	 * Posts JSON string to the url (as a multipart HTTP POST).
 	 *
@@ -36,24 +28,25 @@ class CoverallsTask extends DefaultTask {
 	 */
 	void postJsonToUrl(String json, String url) {
 
-		HTTPBuilder http = new HTTPBuilder(url)
+        RequestBody requestBody = new MultipartBuilder()
+                .type(MultipartBuilder.FORM)
+                .addPart(
+                    Headers.of("Content-Disposition", "form-data; name=\"json\""),
+                    RequestBody.create(MediaType.parse("application/json"), json))
+                .build();
 
-		http.request(POST) { req ->
+        Request request = new Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .build();
 
-			req.entity = MultipartEntityBuilder.create().addBinaryBody('json_file', json.getBytes('UTF-8'), ContentType.APPLICATION_JSON, 'json_file').build()
+        OkHttpClient client = new OkHttpClient();
+        Response response = client.newCall(request).execute();
 
-			response.success = { resp, reader ->
-				this.logger.info resp.statusLine.toString()
-				this.logger.info resp.getAllHeaders().toString()
-				System.out << reader
-			}
+        this.logger.info response.code().toString();
+        this.logger.info response.headers().toString()
+        System.out << response.body().string();
 
-			response.failure = { resp, reader ->
-				this.logger.error resp.statusLine.toString()
-				this.logger.error resp.getAllHeaders().toString()
-				System.out << reader
-			}
-		}
 	}
 
 	/**
@@ -121,8 +114,6 @@ class CoverallsTask extends DefaultTask {
 
 		String json = rep.toJson()
 		this.logger.info json
-
-		postJsonToUrl json, this.project.extensions.coveralls.apiEndpoint
 	}
 
 }
