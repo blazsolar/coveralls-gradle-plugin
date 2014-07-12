@@ -114,6 +114,8 @@ class CoverallsTask extends DefaultTask {
 
 		String json = rep.toJson()
 		this.logger.info json
+
+		postJsonToUrl json, this.project.extensions.coveralls.apiEndpoint
 	}
 
 }
