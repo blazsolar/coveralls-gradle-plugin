@@ -151,9 +151,9 @@ bintray {
         repo = 'gradle-plugins'
         name = 'coveralls-gradle-plugin'
         desc = 'Send coverage data to coveralls.io.'
-        websiteUrl = 'https://github.com/kt3k/coveralls-gradle-plugin'
-        issueTrackerUrl = 'https://github.com/kt3k/coveralls-gradle-plugin/issues'
-        vcsUrl = 'https://github.com/kt3k/coveralls-gradle-plugin.git'
+        websiteUrl = 'https://github.com/blazsolar/coveralls-gradle-plugin'
+        issueTrackerUrl = 'https://github.com/blazsolar/coveralls-gradle-plugin/issues'
+        vcsUrl = 'https://github.com/blazsolar/coveralls-gradle-plugin.git'
         licenses = ['MIT']
         labels = ['coveralls', 'coverage']
         publicDownloadNumbers = true
