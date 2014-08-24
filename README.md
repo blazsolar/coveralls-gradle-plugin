@@ -1,18 +1,27 @@
-# coveralls-gradle-plugin v0.6.1
+# coveralls-gradle-plugin v2.0.0
 
 [![Build Status](https://travis-ci.org/kt3k/coveralls-gradle-plugin.png?branch=master)](https://travis-ci.org/kt3k/coveralls-gradle-plugin) [![Coverage Status](https://coveralls.io/repos/kt3k/coveralls-gradle-plugin/badge.png)](https://coveralls.io/r/kt3k/coveralls-gradle-plugin)
 
 > Send coverage data to coveralls.io.
 
+## News
+
+- We dropped gradle 1.x support at the plugin version 2.0.0. If you need to use the plugin with gradle 1.x, please see [v1.0.2](https://github.com/kt3k/coveralls-gradle-plugin/tree/v1.0.2) or [v0.6.1](https://github.com/kt3k/coveralls-gradle-plugin/tree/v0.6.1).
+(2014/08/01)
+
+- The ID of the plugin has been changed from `coveralls` to `com.github.kt3k.coveralls` according to [the guidelines of gradle plugin](http://plugins.gradle.org/submit).
+Please see the examples below for details.
+(2014/07/21)
+
 ## Usage
 
 ### use with *cobertura* reporter
 
-Add following lines to build.gradle:
+Add the following lines to build.gradle:
 
 ```groovy
 apply plugin: 'cobertura'
-apply plugin: 'coveralls'
+apply plugin: 'com.github.kt3k.coveralls'
 
 buildscript {
     repositories {
@@ -21,7 +30,7 @@ buildscript {
 
     dependencies {
         classpath 'net.saliman:gradle-cobertura-plugin:2.0.0' // cobertura plugin
-        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:0.6.1'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.0'
     }
 }
 
@@ -30,7 +39,7 @@ cobertura.coverageFormats = ['html', 'xml'] // coveralls plugin depends on xml f
 
 And run `coveralls` task after `cobertura` task.
 
-This plugin now supports Travis-CI only. Sample `.travis.yml` looks like following:
+An example `.travis.yml` looks like following:
 
 ```yaml
 language: java
@@ -42,10 +51,10 @@ env:
 - TERM=dumb
 
 after_success:
-- gradle cobertura coveralls
+- ./gradlew cobertura coveralls
 ```
 
-For groovy projects, add a following line to build.gradle:
+For groovy projects, add the following line to build.gradle:
 
 ```groovy
 cobertura.coverageSourceDirs = sourceSets.main.groovy.srcDirs
@@ -53,11 +62,11 @@ cobertura.coverageSourceDirs = sourceSets.main.groovy.srcDirs
 
 ### use with *JaCoCo* plugin
 
-Add following lines to build.gradle:
+Add the following lines to build.gradle:
 
 ```groovy
 apply plugin: 'jacoco'
-apply plugin: 'coveralls'
+apply plugin: 'com.github.kt3k.coveralls'
 
 buildscript {
     repositories {
@@ -65,7 +74,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:0.3.0'
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.0'
     }
 }
 
@@ -78,7 +87,7 @@ jacocoTestReport {
 
 ```
 
-Sample `.travis.yml` looks like following:
+An example `.travis.yml` looks like following:
 
 ```yaml
 language: java
@@ -90,7 +99,7 @@ env:
 - TERM=dumb
 
 after_success:
-- gradle jacocoTestReport coveralls
+- ./gradlew jacocoTestReport coveralls
 ```
 
 ### use with Travis-CI Pro & Coveralls Pro
@@ -115,9 +124,7 @@ env:
 
 ## Examples
 
-- https://github.com/mockito/mockito
-- https://github.com/gesellix/gradle-debian-plugin
-- https://github.com/strawjs/straw-android-plugin
+- https://github.com/strawjs/straw-android
 
 
 ## License
@@ -127,6 +134,8 @@ MIT License ( Yoshiya Hinosawa )
 
 ## Release History
 
+ * 2014-08-01   v2.0.0   More CI services support. Improvements. ([#21](https://github.com/kt3k/coveralls-gradle-plugin/pull/21))
+ * 2014-07-21   v1.0.2   Changed the ID of the plugin. `coveralls` -> `com.github.kt3k.coveralls` ([#19](https://github.com/kt3k/coveralls-gradle-plugin/pull/19))
  * 2014-07-06   v0.6.1   Fixed XML parser behaviours. ([#18](https://github.com/kt3k/coveralls-gradle-plugin/pull/18))
  * 2014-07-02   v0.6.0   Multiple project support for jacoco. ([#13](https://github.com/kt3k/coveralls-gradle-plugin/pull/13))
  * 2014-06-26   v0.5.0   Android plugin support. ([#17](https://github.com/kt3k/coveralls-gradle-plugin/pull/17))
