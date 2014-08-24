@@ -139,10 +139,10 @@ publishing {
 
 bintray {
 
-    if (project.hasProperty('bintrayUsername')) {
+    if (project.hasProperty('bintrayUser')) {
         // these two should be defined out of the repository, for example, in ~/.gradle/gradle.properties
-        user = bintrayUsername
-        key = bintrayApiKey
+        user = bintrayUser
+        key = bintrayKey
     }
 
     publications = ['plugin']
@@ -157,13 +157,6 @@ bintray {
         licenses = ['MIT']
         labels = ['coveralls', 'coverage']
         publicDownloadNumbers = true
-        version {
-            name = '2.0.0'
-            vcsTag = 'v2.0.0'
-            attributes = [
-                'gradle-plugin': 'com.github.kt3k.coveralls:org.kt3k.gradle.plugin:coveralls-gradle-plugin'
-            ]
-        }
     }
 
 }
