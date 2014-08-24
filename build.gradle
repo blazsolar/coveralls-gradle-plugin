@@ -21,6 +21,7 @@ dependencies {
     compile 'org.apache.httpcomponents:httpmime:4.3'
 
     compile 'com.squareup.okhttp:okhttp:2.0.0'
+    compile 'com.google.code.gson:gson:2.3'
 
     testCompile 'junit:junit:4.11'
     testCompile 'org.mockito:mockito-all:1.9.5'

@@ -1,7 +1,5 @@
 package com.github.blazsolar.gradle.coveralls.domain
-
-import groovy.json.JsonBuilder
-
+import com.google.gson.Gson
 /**
  * The model class of the report for Coveralls' format.
  */
@@ -27,8 +25,7 @@ class Report {
 	}
 
 	public String toJson() {
-		def minusNull = getProperties().findAll { it.key != "class" && it.value != null }.sort { it.key }
-		JsonBuilder json = new JsonBuilder(minusNull)
-		return json.toString()
+        Gson gson = new Gson();
+        return gson.toJson(this);
 	}
 }
