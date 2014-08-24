@@ -1,17 +1,14 @@
 package org.kt3k.gradle.plugin
 
+import com.github.blazsolar.gradle.CoverallsPlugin
 import org.junit.Test
 import static org.junit.Assert.*
 
-import static org.mockito.Mockito.*
-import org.mockito.ArgumentCaptor
-
 import org.gradle.api.Project
-import org.gradle.api.Plugin
 import org.gradle.api.Task
 import org.gradle.testfixtures.ProjectBuilder
 
-import org.kt3k.gradle.plugin.coveralls.CoverallsTask
+import com.github.blazsolar.gradle.coveralls.CoverallsTask
 
 class CoverallsPluginTest {
 

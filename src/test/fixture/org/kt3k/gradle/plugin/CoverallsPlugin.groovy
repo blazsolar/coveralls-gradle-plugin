@@ -4,7 +4,7 @@ import org.gradle.api.*
 
 import org.slf4j.LoggerFactory
 
-import org.kt3k.gradle.plugin.coveralls.Application
+import com.github.blazsolar.gradle.coveralls.Application
 
 class CoverallsPlugin implements Plugin<Project> {
 

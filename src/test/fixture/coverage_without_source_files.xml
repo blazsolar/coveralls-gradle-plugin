@@ -10,11 +10,11 @@
 			<classes>
 			</classes>
 		</package>
-		<package name="org.kt3k.gradle.plugin.coveralls">
+		<package name="com.github.blazsolar.gradle.coveralls">
 			<classes>
 			</classes>
 		</package>
-		<package name="org.kt3k.gradle.plugin.coveralls.domain">
+		<package name="com.github.blazsolar.gradle.coveralls.domain">
 			<classes>
 			</classes>
 		</package>

@@ -1,4 +1,4 @@
-package org.kt3k.gradle.plugin.coveralls
+package com.github.blazsolar.gradle.coveralls
 
 import groovyx.net.http.HTTPBuilder
 
@@ -9,7 +9,7 @@ import org.apache.http.entity.ContentType
 
 import org.gradle.api.logging.Logger
 
-import org.kt3k.gradle.plugin.coveralls.domain.*
+import com.github.blazsolar.gradle.coveralls.domain.*
 
 
 class Application {

@@ -1,4 +1,4 @@
-package org.kt3k.gradle.plugin.coveralls.domain
+package com.github.blazsolar.gradle.coveralls.domain
 
 import org.gradle.api.Project
 import org.gradle.api.plugins.GroovyPlugin

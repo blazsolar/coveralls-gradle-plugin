@@ -1,4 +1,4 @@
-package org.kt3k.gradle.plugin
+package com.github.blazsolar.gradle
 
 class CoverallsPluginExtension {
 

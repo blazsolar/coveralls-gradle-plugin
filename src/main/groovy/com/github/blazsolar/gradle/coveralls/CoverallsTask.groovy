@@ -1,11 +1,11 @@
-package org.kt3k.gradle.plugin.coveralls
+package com.github.blazsolar.gradle.coveralls
 import com.squareup.okhttp.*
 import org.gradle.api.DefaultTask
-import org.kt3k.gradle.plugin.CoverallsPluginExtension
+import com.github.blazsolar.gradle.CoverallsPluginExtension
 import org.gradle.api.logging.Logger
 import org.gradle.api.logging.Logging
 import org.gradle.api.tasks.TaskAction
-import org.kt3k.gradle.plugin.coveralls.domain.*
+import com.github.blazsolar.gradle.coveralls.domain.*
 /**
  * `coveralls` task class
  */

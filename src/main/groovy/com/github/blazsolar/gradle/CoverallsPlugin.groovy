@@ -1,9 +1,9 @@
-package org.kt3k.gradle.plugin
+package com.github.blazsolar.gradle
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.Task
-import org.kt3k.gradle.plugin.coveralls.CoverallsTask
+import com.github.blazsolar.gradle.coveralls.CoverallsTask
 
 /**
  * Coveralls plugin for gradle.

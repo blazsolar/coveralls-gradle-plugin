@@ -8,7 +8,7 @@
 	<packages>
 		<package>
 			<classes>
-				<class name="org.kt3k.gradle.plugin.coveralls.domain.Report" filename="org/kt3k/gradle/plugin/coveralls/domain/Report.groovy">
+				<class name="com.github.blazsolar.gradle.coveralls.domain.Report" filename="org/kt3k/gradle/plugin/coveralls/domain/Report.groovy">
 					<lines>
 						<line number="12" hits="10" branch="false"/>
 						<line number="13" hits="10" branch="false"/>
@@ -17,7 +17,7 @@
 						<line number="19" hits="5" branch="false"/>
 					</lines>
 				</class>
-				<class name="org.kt3k.gradle.plugin.coveralls.domain.Nonexistent" filename="org/kt3k/gradle/plugin/coveralls/domain/Nonexistent.groovy">
+				<class name="com.github.blazsolar.gradle.coveralls.domain.Nonexistent" filename="org/kt3k/gradle/plugin/coveralls/domain/Nonexistent.groovy">
 					<lines>
 						<line number="9" hits="11" branch="false"/>
 						<line number="10" hits="11" branch="false"/>

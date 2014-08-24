@@ -1,4 +1,4 @@
-package org.kt3k.gradle.plugin.coveralls
+package com.github.blazsolar.gradle.coveralls
 import com.github.tomakehurst.wiremock.junit.WireMockRule
 import org.gradle.api.Project
 import org.gradle.api.Task
@@ -7,8 +7,8 @@ import org.gradle.testfixtures.ProjectBuilder
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.kt3k.gradle.plugin.CoverallsPluginExtension
-import org.kt3k.gradle.plugin.coveralls.domain.CoberturaSourceReportFactory
+import com.github.blazsolar.gradle.CoverallsPluginExtension
+import com.github.blazsolar.gradle.coveralls.domain.CoberturaSourceReportFactory
 import org.mockito.Mockito
 
 class CoverallsTaskTest {

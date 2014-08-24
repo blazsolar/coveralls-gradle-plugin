@@ -1,4 +1,4 @@
-package org.kt3k.gradle.plugin.coveralls.domain
+package com.github.blazsolar.gradle.coveralls.domain
 
 /**
  * The model class of the report of a source file for Coveralls' format.

@@ -1,11 +1,11 @@
-package org.kt3k.gradle.plugin.coveralls.domain
+package com.github.blazsolar.gradle.coveralls.domain
 
 import org.gradle.api.Project
 import org.gradle.testfixtures.ProjectBuilder
 import org.junit.Before
 import org.junit.Test
 import static org.junit.Assert.*
-import org.kt3k.gradle.plugin.CoverallsPluginExtension
+import com.github.blazsolar.gradle.CoverallsPluginExtension
 
 class CoberturaSourceReportFactoryTest {
 
